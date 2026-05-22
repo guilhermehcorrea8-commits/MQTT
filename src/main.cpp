@@ -5,22 +5,22 @@
 // =====================
 // WIFI
 // =====================
-const char* ssid = "POCO X5 Pro 5G";
-const char* password = "5por uso";
+const char *ssid = "POCO X5 Pro 5G";
+const char *password = "5por uso";
 
 // =====================
 // MQTT HIVEMQ CLOUD
 // =====================
-const char* mqtt_server =
-"3a2c5e78e4fa4b9488eb0da3307566b1.s1.eu.hivemq.cloud";
+const char *mqtt_server =
+    "3a2c5e78e4fa4b9488eb0da3307566b1.s1.eu.hivemq.cloud";
 
 const int mqtt_port = 8883;
 
-const char* mqtt_user =
-"MqGuiTT";
+const char *mqtt_user =
+    "MqGuiTT";
 
-const char* mqtt_password =
-"2px9p7Q@J7JNYpq";
+const char *mqtt_password =
+    "2px9p7Q@J7JNYpq";
 
 // =====================
 // OBJETOS

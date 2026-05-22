@@ -51,7 +51,7 @@ client.on("connect", () => {
     client.subscribe(TOPICO);
 
     // inicia simulador
-    simularESP32();
+    // simularESP32();
 });
 
 // =======================
@@ -100,27 +100,27 @@ client.on(
 // ESP32 FAKE (SIMULADA)
 // =======================
 
-function simularESP32()
-{
-    setInterval(() =>
-    {
-        // temperatura fake
-        const temperatura =
-            (
-                Math.random() * 15
-                + 20
-            ).toFixed(1);
+// function simularESP32()
+// {
+//     setInterval(() =>
+//     {
+//         // temperatura fake
+//         const temperatura =
+//             (
+//                 Math.random() * 15
+//                 + 20
+//             ).toFixed(1);
 
-        console.log(
-            "Enviando:",
-            temperatura
-        );
+//         console.log(
+//             "Enviando:",
+//             temperatura
+//         );
 
-        // publica MQTT
-        client.publish(
-            TOPICO,
-            temperatura
-        );
+//         // publica MQTT
+//         client.publish(
+//             TOPICO,
+//             temperatura
+//         );
 
-    }, 3000);
-}
+//     }, 3000);
+// }
