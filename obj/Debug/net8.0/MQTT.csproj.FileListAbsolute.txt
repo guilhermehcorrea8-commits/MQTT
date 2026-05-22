@@ -1,0 +1,17 @@
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.AssemblyInfoInputs.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.AssemblyInfo.cs
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.csproj.CoreCompileInputs.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0\MQTT.exe
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0\MQTT.deps.json
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0\MQTT.runtimeconfig.json
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0\MQTT.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0\MQTT.pdb
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0\MQTTnet.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.csproj.AssemblyReference.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.csproj.Up2Date
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\refint\MQTT.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.pdb
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\MQTT.genruntimeconfig.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0\ref\MQTT.dll

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "d0jImc4wvQI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\65138624\\Documents\\PlatformIO\\Projects\\MQTT\\MQTT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\65138624\\.nuget\\packages\\mqttnet\\4.3.7.1207\\mqttnet.4.3.7.1207.nupkg.sha512"
+  ],
+  "logs": []
+}

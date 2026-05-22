@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: linear-gradient(135deg, #f5d7a1, #d9a066, #b87333, #8b5a2b);
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 950px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+
+  margin-bottom: 25px;
+
+  font-size: 2.5rem;
+
+  color: #fff3dc;
+
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  background: linear-gradient(135deg, #fff3dc, #f0c27b);
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  margin-bottom: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+#temperatura {
+  font-size: 4rem;
+
+  color: #8b4513;
+
+  font-weight: bold;
+}
+
+canvas {
+  background: #fff8ef;
+
+  border-radius: 20px;
+
+  padding: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #temperatura {
+    font-size: 3rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}

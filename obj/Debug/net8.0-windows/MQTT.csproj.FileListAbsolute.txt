@@ -1,0 +1,17 @@
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.csproj.AssemblyReference.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.AssemblyInfoInputs.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.AssemblyInfo.cs
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.csproj.CoreCompileInputs.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0-windows\MQTT.exe
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0-windows\MQTT.deps.json
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0-windows\MQTT.runtimeconfig.json
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0-windows\MQTT.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0-windows\MQTT.pdb
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\bin\Debug\net8.0-windows\MQTTnet.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.csproj.Up2Date
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\refint\MQTT.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.pdb
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.genruntimeconfig.cache
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\ref\MQTT.dll
