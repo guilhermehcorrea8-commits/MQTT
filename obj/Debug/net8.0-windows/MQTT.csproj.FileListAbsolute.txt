@@ -15,3 +15,4 @@ C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\re
 C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.pdb
 C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.genruntimeconfig.cache
 C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\ref\MQTT.dll
+C:\Users\65138624\Documents\PlatformIO\Projects\MQTT\obj\Debug\net8.0-windows\MQTT.sourcelink.json
