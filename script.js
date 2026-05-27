@@ -96,6 +96,8 @@ client.on(
     grafico.update();
 });
 
+// DESMARCAR "//" Para Funcionar
+
 // =======================
 // ESP32 FAKE (SIMULADA)
 // =======================
