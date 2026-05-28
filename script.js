@@ -80,6 +80,8 @@ const graficoVibracao = criarGrafico("graficoVibracao", "Vibração");
 //====================================
 
 client.on("connect", () => {
+  console.log("MQTT conectado");
+
   mqttStatus.innerHTML = "🟢 MQTT Online";
 
   mqttStatus.style.background = "green";
@@ -87,6 +89,8 @@ client.on("connect", () => {
   Object.values(TOPICOS).forEach((topico) => {
     if (topico !== TOPICOS.comando) {
       client.subscribe(topico);
+
+      console.log("SUBSCRIBE:", topico);
     }
   });
 });
@@ -99,66 +103,69 @@ client.on("close", () => {
   alerta("⚠ Falha de comunicação MQTT");
 });
 
-//====================================
-// RECEBER DADOS
-//====================================
+//======================
+// RECEBER DADOS MQTT
+//======================
 
 client.on("message", (topic, message) => {
-  ultimoPacote = Date.now();
+  console.log("Recebido:", topic, message.toString());
 
   const valor = message.toString();
 
   const hora = new Date().toLocaleTimeString();
 
+  // última atualização
   document.getElementById("ultimaAtualizacao").innerText = hora;
 
-  //========================
+  // remove alerta offline
+  alertas.innerHTML = "";
+
+  //==================
   // TEMPERATURA
-  //========================
+  //==================
 
   if (topic === TOPICOS.temperatura) {
-    temperaturaEl.innerText = valor + " °C";
+    document.getElementById("temperatura").innerText = valor + " °C";
 
-    atualizarGrafico(graficoTemp, valor);
+    atualizarGrafico(graficoTemp, Number(valor));
 
-    temperaturaEl.style.color = Number(valor) > 40 ? "red" : "inherit";
-
-    verificarTemperatura(Number(valor));
+    if (Number(valor) > 40) {
+      alerta("⚠ ALERTA DE SUPERAQUECIMENTO");
+    }
   }
 
-  //========================
+  //==================
   // UMIDADE
-  //========================
+  //==================
 
   if (topic === TOPICOS.umidade) {
-    umidadeEl.innerText = valor + " %";
+    document.getElementById("umidade").innerText = valor + " %";
 
-    atualizarGrafico(graficoUmidade, valor);
+    atualizarGrafico(graficoUmidade, Number(valor));
   }
 
-  //========================
-  // VIBRACAO
-  //========================
+  //==================
+  // VIBRAÇÃO
+  //==================
 
   if (topic === TOPICOS.vibracao) {
-    vibracaoEl.innerText = valor;
+    document.getElementById("vibracao").innerText = valor;
 
-    atualizarGrafico(graficoVibracao, valor);
+    atualizarGrafico(graficoVibracao, Number(valor));
 
-    vibracaoEl.style.color = Number(valor) > 80 ? "red" : "inherit";
-
-    verificarVibracao(Number(valor));
+    if (Number(valor) > 80) {
+      alerta("⚠ VIBRAÇÃO EXCESSIVA");
+    }
   }
 
-  //========================
-  // STATUS
-  //========================
+  //==================
+  // STATUS MÁQUINA
+  //==================
 
   if (topic === TOPICOS.status) {
-    statusEl.innerText = valor;
+    document.getElementById("status").innerText = valor;
   }
 });
-
 //====================================
 // ALERTAS
 //====================================

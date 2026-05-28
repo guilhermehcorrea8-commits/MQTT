@@ -6,46 +6,46 @@
 // WIFI
 //==================================================
 
-const char* ssid =
-"POCO";
+const char *ssid =
+    "POCO";
 
-const char* password =
-"5poruso1";
+const char *password =
+    "5poruso1";
 
 //==================================================
 // MQTT
 //==================================================
 
-const char* mqtt_server =
-"3a2c5e78e4fa4b9488eb0da3307566b1.s1.eu.hivemq.cloud";
+const char *mqtt_server =
+    "3a2c5e78e4fa4b9488eb0da3307566b1.s1.eu.hivemq.cloud";
 
 const int mqtt_port =
-8883;
+    8883;
 
-const char* mqtt_user =
-"MqGuiTT";
+const char *mqtt_user =
+    "MqGuiTT";
 
-const char* mqtt_password =
-"2px9p7Q@J7JNYpq";
+const char *mqtt_password =
+    "2px9p7Q@J7JNYpq";
 
 //==================================================
 // TOPICOS MQTT
 //==================================================
 
-const char* topicTemperatura =
-"industria/temperatura";
+const char *topicTemperatura =
+    "industria/temperatura";
 
-const char* topicUmidade =
-"industria/umidade";
+const char *topicUmidade =
+    "industria/umidade";
 
-const char* topicVibracao =
-"industria/vibracao";
+const char *topicVibracao =
+    "industria/vibracao";
 
-const char* topicStatus =
-"industria/status";
+const char *topicStatus =
+    "industria/status";
 
-const char* topicComando =
-"industria/comando";
+const char *topicComando =
+    "industria/comando";
 
 //==================================================
 // OBJETOS MQTT
@@ -59,13 +59,13 @@ PubSubClient client(espClient);
 //==================================================
 
 bool maquinaLigada =
-true;
+    true;
 
 unsigned long ultimoEnvio =
-0;
+    0;
 
 const long intervalo =
-3000;
+    3000;
 
 //==================================================
 // WIFI
@@ -74,18 +74,14 @@ const long intervalo =
 void conectarWiFi()
 {
     Serial.println(
-        "Conectando WiFi..."
-    );
+        "Conectando WiFi...");
 
     WiFi.begin(
         ssid,
-        password
-    );
+        password);
 
     while (
-        WiFi.status()
-        != WL_CONNECTED
-    )
+        WiFi.status() != WL_CONNECTED)
     {
         delay(500);
 
@@ -94,16 +90,13 @@ void conectarWiFi()
 
     Serial.println();
     Serial.println(
-        "WiFi conectado!"
-    );
+        "WiFi conectado!");
 
     Serial.print(
-        "IP: "
-    );
+        "IP: ");
 
     Serial.println(
-        WiFi.localIP()
-    );
+        WiFi.localIP());
 }
 
 //==================================================
@@ -111,57 +104,49 @@ void conectarWiFi()
 //==================================================
 
 void callback(
-    char* topic,
-    byte* payload,
-    unsigned int length
-)
+    char *topic,
+    byte *payload,
+    unsigned int length)
 {
     String mensagem = "";
 
     for (
         int i = 0;
         i < length;
-        i++
-    )
+        i++)
     {
         mensagem +=
-        (char) payload[i];
+            (char)payload[i];
     }
 
     Serial.print(
-        "Mensagem recebida: "
-    );
+        "Mensagem recebida: ");
 
     Serial.println(
-        mensagem
-    );
+        mensagem);
 
     //===========================
     // CONTROLE MAQUINA
     //===========================
 
     if (
-        mensagem == "ON"
-    )
+        mensagem == "ON")
     {
         maquinaLigada =
-        true;
+            true;
 
         Serial.println(
-            "Maquina Ligada"
-        );
+            "Maquina Ligada");
     }
 
     if (
-        mensagem == "OFF"
-    )
+        mensagem == "OFF")
     {
         maquinaLigada =
-        false;
+            false;
 
         Serial.println(
-            "Maquina Desligada"
-        );
+            "Maquina Desligada");
     }
 }
 
@@ -172,41 +157,33 @@ void callback(
 void conectarMQTT()
 {
     while (
-        !client.connected()
-    )
+        !client.connected())
     {
         Serial.println(
-            "Conectando MQTT..."
-        );
+            "Conectando MQTT...");
 
         bool conectado =
-        client.connect(
-            "ESP32_INDUSTRIAL",
-            mqtt_user,
-            mqtt_password
-        );
+            client.connect(
+                "ESP32_INDUSTRIAL",
+                mqtt_user,
+                mqtt_password);
 
         if (
-            conectado
-        )
+            conectado)
         {
             Serial.println(
-                "MQTT conectado!"
-            );
+                "MQTT conectado!");
 
             client.subscribe(
-                topicComando
-            );
+                topicComando);
         }
         else
         {
             Serial.print(
-                "Erro MQTT: "
-            );
+                "Erro MQTT: ");
 
             Serial.println(
-                client.state()
-            );
+                client.state());
 
             delay(3000);
         }
@@ -220,82 +197,67 @@ void conectarMQTT()
 void publicarDados()
 {
     float temperatura =
-    random(250, 460)
-    / 10.0;
+        random(250, 460) / 10.0;
 
     float umidade =
-    random(400, 900)
-    / 10.0;
+        random(400, 900) / 10.0;
 
     int vibracao =
-    random(0, 100);
+        random(0, 100);
 
     String status =
-    maquinaLigada
-    ? "LIGADA"
-    : "DESLIGADA";
+        maquinaLigada
+            ? "LIGADA"
+            : "DESLIGADA";
 
     client.publish(
         topicTemperatura,
         String(
-            temperatura
-        ).c_str()
-    );
+            temperatura)
+            .c_str());
 
     client.publish(
         topicUmidade,
         String(
-            umidade
-        ).c_str()
-    );
+            umidade)
+            .c_str());
 
     client.publish(
         topicVibracao,
         String(
-            vibracao
-        ).c_str()
-    );
+            vibracao)
+            .c_str());
 
     client.publish(
         topicStatus,
-        status.c_str()
-    );
+        status.c_str());
 
     Serial.println(
-        "=================="
-    );
+        "==================");
 
     Serial.print(
-        "Temperatura: "
-    );
+        "Temperatura: ");
 
     Serial.println(
-        temperatura
-    );
+        temperatura);
 
     Serial.print(
-        "Umidade: "
-    );
+        "Umidade: ");
 
     Serial.println(
-        umidade
-    );
+        umidade);
 
     Serial.print(
-        "Vibracao: "
-    );
+        "Vibracao: ");
 
     Serial.println(
-        vibracao
-    );
+        vibracao);
 
     Serial.print(
-        "Status: "
-    );
+        "Status: ");
 
     Serial.println(
-        status
-    );
+        status);
 }
 
 //==================================================
@@ -305,22 +267,22 @@ void publicarDados()
 void setup()
 {
     Serial.begin(
-        115200
-    );
+        115200);
+
+    randomSeed(
+        analogRead(34));
 
     conectarWiFi();
 
     espClient
-    .setInsecure();
+        .setInsecure();
 
     client.setServer(
         mqtt_server,
-        mqtt_port
-    );
+        mqtt_port);
 
     client.setCallback(
-        callback
-    );
+        callback);
 }
 
 //==================================================
@@ -330,16 +292,13 @@ void setup()
 void loop()
 {
     if (
-        WiFi.status()
-        != WL_CONNECTED
-    )
+        WiFi.status() != WL_CONNECTED)
     {
         conectarWiFi();
     }
 
     if (
-        !client.connected()
-    )
+        !client.connected())
     {
         conectarMQTT();
     }
@@ -347,16 +306,13 @@ void loop()
     client.loop();
 
     unsigned long agora =
-    millis();
+        millis();
 
     if (
-        agora
-        - ultimoEnvio
-        >= intervalo
-    )
+        agora - ultimoEnvio >= intervalo)
     {
         ultimoEnvio =
-        agora;
+            agora;
 
         publicarDados();
     }
